@@ -1,4 +1,4 @@
-// Can a string be rearranged to make a palindrome?
+// Given a string, write a function to check if it is a permutation of a palindrome.
 // All or all but one unique characters must have an even number of instances
 
 var counterEven = 0;
