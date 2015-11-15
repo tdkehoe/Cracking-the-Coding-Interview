@@ -1,6 +1,7 @@
 // This is for question 1.5 in the book "Cracking the Coding Interview, 6th Edition," by Gayle Laakman McDowell.
 
-// The book's solution is erroneous. I was the first person to report an erratum in the 6th Edition on Ms. McDowell's website! I've included the book's solution, my solution, and my e-mail to Ms. McDowell.
+// The book's solution is erroneous. I was the first person to report an erratum in the 6th Edition on Ms. McDowell's website!
+// I've included the book's solution, my solution, and my e-mail to Ms. McDowell.
 
 // THE QUESTION
 // There are three types of edits that can be performed on strings:
@@ -16,9 +17,14 @@
 /*
 The solution for question 1.5, v6, appears to be incorrect.
 
-The function oneEditInsert in the solution (page 200) checks if the first characters of the two strings match, then checks if the next pair of characters match, and so on, returning false when two pairs of mismatched characters are found, otherwise returning true. This works for strings that are identical except for one string having an additional character at the end, e.g., 'pales' and 'pale'. It doesn't work for 'pale' and 'ple'.
+The function oneEditInsert in the solution (page 200) checks if the first characters of the two strings match,
+then checks if the next pair of characters match, and so on, returning false when two pairs of mismatched characters
+are found, otherwise returning true. This works for strings that are identical except for one string having an
+additional character at the end, e.g., 'pales' and 'pale'. It doesn't work for 'pale' and 'ple'.
 
-The correct algorthm should take the longer string, remove the first character, check if the two strings are now identical, put the removed character back in place, remove the nect character, check if the two strings are now identical, put the removed character back in place, etc.
+The correct algorthm should take the longer string, remove the first character, check if the two strings are now identical,
+put the removed character back in place, remove the nect character, check if the two strings are now identical,
+put the removed character back in place, etc.
 
 My solution:
 */
