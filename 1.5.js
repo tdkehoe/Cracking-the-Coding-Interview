@@ -1,3 +1,8 @@
+// This is for question 1.5 in the book "Cracking the Coding Interview, 6th Edition," by Gayle Laakman McDowell.
+
+// The book's solution is erroneous. I was the first person to report an erratum in the 6th Edition on Ms. McDowell's website! I've included the book's solution, my solution, and my e-mail to Ms. McDowell.
+
+// THE QUESTION
 // There are three types of edits that can be performed on strings:
 // insert a character, remove a character, or replace a character.
 // Given two strings, write a function to check if they are one edit (or zero edits) away.
@@ -7,6 +12,7 @@
 // pale, bale -> true
 // pale, bake -> false
 
+// MY E-MAIL TO MS. MCDOWELL
 /*
 The solution for question 1.5, v6, appears to be incorrect.
 
