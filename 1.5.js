@@ -45,13 +45,13 @@ var oneEditReplace = function(first, second) { // if string lengths are the equa
 var oneEditRemove = function(longerString, shorterString){ // if strings are different lengths
   var longerArray = longerString.split(''); // split the longer string into an array
   for (var i = 0; i < longerArray.length; i++) {
-    var removedCharacter = longerArray.splice(i,1); // remove each character from the longer array
+    var removedCharacter = longerArray.splice(i, 1); // remove each character from the longer array
     if (longerArray.join('') === shorterString) { // test if the strings are now identical
       return true + " Removing the '" + removedCharacter.toString() + "' makes the strings identical.";
     }
     longerArray.splice(i, 0, removedCharacter.toString()); // put the character back into the array
-  };
-  return false + " The removal of each character doesn't make the strings identical."
+  }
+  return false + " The removal of each character doesn't make the strings identical.";
 };
 
 var oneEditAway = function(first, second) {
@@ -59,9 +59,9 @@ var oneEditAway = function(first, second) {
     return true + " The strings are identical.";
   } else if (first.length === second.length) { // if the string lengths are equal
     return oneEditReplace(first, second);
-  } else if (first.length === second.length +1) { // if string1 is longer than string2 by one character
+  } else if (first.length === second.length + 1) { // if string1 is longer than string2 by one character
     return oneEditRemove(first, second);
-  } else if (first.length === second.length -1) { // if string1 is shorter than string2 by one character
+  } else if (first.length === second.length - 1) { // if string1 is shorter than string2 by one character
     return oneEditRemove(second, first);
   } else { // if string lengths differ by more than two characters
     return false + " String lengths differ by more than two.";
@@ -73,47 +73,32 @@ console.log(oneEditAway('pale', 'ple'));
 // Book's solution below
 
 var oneEditReplace = function(first, second) {
-  console.log("In oneEditReplace.");
   var foundDifference = false;
   for (var i = 0; i < first.length; i++) {
     if (first.charAt(i) != second.charAt(i)) {
       if (foundDifference) { // if second difference found
-        console.log("false");
         return false;
       }
       foundDifference = true;
     }
   }
-  console.log("true");
   return true;
 };
 
 var oneEditInsert = function(s1, s2) {
-  console.log("In oneEditInsert.");
-  console.log(s1);
-  console.log(s2);
-  index1 = 0;
-  index2 = 0;
+  var index1 = 0;
+  var index2 = 0;
   while (index1 < s1.length && index2 < s2.length) {
     if (s1.charAt(index1) != s2.charAt(index2)) {
-      console.log("Characters don't match.");
       if (index1 != index2) {
-        console.log("A second character doesn't match.");
-        console.log("false");
         return false;
       }
       index2++;
-      console.log(index1);
-      console.log(index2);
     } else {
-      console.log("Characters match.");
       index1++;
-      console.log(index1);
       index2++;
-      console.log(index2);
     }
   }
-  console.log("true");
   return true;
 };
 
@@ -122,12 +107,12 @@ var oneEditAway = function(first, second) {
     return true; // strings are identical
   } else if (first.length === second.length) {
     oneEditReplace(first, second);
-  } else if (first.length === second.length +1) {
+  } else if (first.length === second.length + 1) {
     oneEditInsert(first, second);
-  } else if (first.length === second.length -1) {
+  } else if (first.length === second.length - 1) {
     oneEditInsert(second, first);
   } else {
-    console.log("False.");
+    return false;
   }
 };
 
