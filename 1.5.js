@@ -30,7 +30,6 @@ My solution:
 */
 
 var oneEditReplace = function(first, second) { // if string lengths are the equal
-  console.log("In oneEditReplace.");
   var foundDifference = false; // initialize variable
   for (var i = 0; i < first.length; i++) {
     if (first.charAt(i) != second.charAt(i)) { // check if each character in string 1 is identical to its counterpart in string2
@@ -44,20 +43,13 @@ var oneEditReplace = function(first, second) { // if string lengths are the equa
 };
 
 var oneEditRemove = function(longerString, shorterString){ // if strings are different lengths
-  console.log("In oneEditRemove");
   var longerArray = longerString.split(''); // split the longer string into an array
-  console.log(longerArray.length);
   for (var i = 0; i < longerArray.length; i++) {
-    console.log(i);
     var removedCharacter = longerArray.splice(i,1); // remove each character from the longer array
-    console.log(removedCharacter);
-    console.log(longerArray);
-    console.log(longerArray.join(''));
     if (longerArray.join('') === shorterString) { // test if the strings are now identical
       return true + " Removing the '" + removedCharacter.toString() + "' makes the strings identical.";
     }
     longerArray.splice(i, 0, removedCharacter.toString()); // put the character back into the array
-    console.log(longerArray);
   };
   return false + " The removal of each character doesn't make the strings identical."
 };
